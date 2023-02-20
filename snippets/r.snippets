@@ -6,6 +6,10 @@ snippet lib
 	library(${0:package})
 snippet req
 	require(${0:package})
+snippet pmpb
+	if (!require("pacman")) install.packages("pacman"); library(pacman)
+snippet pmpl
+	pacman::p_load(${0:package})
 snippet source
 	source('${0:file}')
 
@@ -137,3 +141,21 @@ snippet fte
 	var.test(${1:x}, ${0:y})
 snippet kvt
 	kv.test(${1:x}, ${0:y})
+
+# functions from dplyr
+snippet %dpfi
+	%>%
+	dplyr::filter(${0:what_to_filter})
+snippet %dpse
+	%>%
+	dplyr::select(${0:what_to_select})
+snippet %dpgr
+	%>%
+	dplyr::group_by(${0:what_to_group})
+snippet %dpmu
+	%>%
+	dplyr::mutate(${0:what_to_mutate})
+snippet %dpsu
+	%>%
+	dplyr::mutate(${0:what_to_summarize})
+
